@@ -1,4 +1,4 @@
-﻿name: Continuous Integration
+﻿name: Deploy do Projeto
 on:
   push:
     branches: ["main", "master"]
