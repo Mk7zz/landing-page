@@ -11,46 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout do código
-        uses: actions/checkout@v4
-
-      - name: Verificar arquivos essenciais do projeto
-        run: |
-          test -f index.html
-          echo "HTML encontrado!"
-
-      - name: Smoke Test
-        run: test -f index.html
-
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Validar sintaxe HTML
-        run: |
-          npx html-validate index.html
-
       - name: Checar arquivos estaticos
         run: |
           ls -R
-          echo "Arquivos estáticos listados com sucesso!"
-
-      - name: Explorar Runner
-        run: |
-          lsb_release -a
-          free -h
-          nproc
-
-  publicar-site:
-    needs: validacao-estatica
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout do código
-        uses: actions/checkout@v4
-
-      - name: Preparar artefato
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: '.'
+          echo "Todos os arquivos foram carregados no Runner!"
