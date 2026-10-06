@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout do repositório
-        uses: actions/checkout@v4
+        uses: actions/checkout@v99
 
       - name: Checar arquivos estaticos
         run: |
